@@ -1,0 +1,10 @@
+export const DEL_PROFILE_DEF = 'DEL_PROFILE_DEF';
+export const PROFILE_DEF = 'PROFILE_DEF';
+export const DEL_PROC_DEF = 'DEL_PROC_DEF';
+export const PROC_DEF = 'PROC_DEF';
+export const DEL_CONN_DEF = 'DEL_CONN_DEF';
+export const CONN_DEF = 'CONN_DEF';
+export const DEL_LINK_DEF = 'DEL_LINK_DEF';
+export const LINK_DEF = 'LINK_DEF';
+export const CONFIG_DEF = 'CONFIG_DEF';
+export const STATUS_DEF = 'STATUS_DEF';
