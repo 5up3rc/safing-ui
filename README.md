@@ -1,19 +1,18 @@
 # Safing UI
 
-The Safing UI is the user interface to the [Safing Core](https://github.com/Safing/safing-core).
+The Safing UI allows you to change settings and monitor applications.
 
-## Current Status
-
-Safing is now in a tech preview phase (v0.0.x), where the first features are completed and we want to open them up to the community to get feedback on the system. It is not yet ready for day to day use and should only be used to play around with the new concept.
+For more information about Safing, please check out [Safing Core](https://github.com/Safing/safing-core).
 
 ## Download
 
-For a packaged download of all components, check the [Safing Installer](https://github.com/Safing/safing-installer) repo, else check the [releases](https://github.com/Safing/safing-ui/releases).
+We recommend to download a packaged version of all components [here](https://github.com/Safing/safing-installer/releases).  
+You can also just [download Safing UI](https://github.com/Safing/safing-ui/releases).
 
-## Running
+## Developing
 
     yarn
-    yarn run develop
+    yarn develop
 
 ## Requirements
 
@@ -23,9 +22,9 @@ For a packaged download of all components, check the [Safing Installer](https://
 
 ## Building
 
-    yarn run pack:win
-    yarn run pack:mac
-    yarn run pack:linux
+    yarn pack:win
+    yarn pack:mac
+    yarn pack:linux
 
 If that does not work for you, try to build with a docker image (you need to have docker installed and running for this):
 
