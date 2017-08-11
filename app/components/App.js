@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import SafingTabs from '../containers/safing-tabs';
 
 import * as actionTypes from '../constants/actionTypes';

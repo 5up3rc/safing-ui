@@ -1,30 +1,32 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import { createMemoryHistory } from 'history';
+// import routes from './routes';
+import configureStore from './store';
 import App from './components/App';
-import {Provider} from 'react-redux';
-import { configureStore, history } from './store/configureStore';
-import './app.global.css';
 
-const store = configureStore();
+// const syncHistoryWithStore = (store, history) => {
+//   const { routing } = store.getState();
+//   if(routing && routing.location) {
+//     history.replace(routing.location);
+//   }
+// };
 
-render(
-  <AppContainer>
-    <App store={store}/>
-  </AppContainer>,
-  document.getElementById('root')
+const initialState = {};
+const routerHistory = createMemoryHistory();
+const store = configureStore(initialState, routerHistory);
+// we do no persists state, no sync needed
+// syncHistoryWithStore(store, routerHistory);
+
+const rootElement = document.querySelector(document.currentScript.getAttribute('data-container'));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ConnectedRouter history={routerHistory}>
+      <App store={store}/>
+    </ConnectedRouter>
+  </Provider>,
+  rootElement
 );
-
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextRoot = require('./components/App'); // eslint-disable-line global-require
-    render(
-      <AppContainer>
-        <Provider store={store}>
-          <NextRoot history={history} />
-        </Provider>
-      </AppContainer>,
-      document.getElementById('root')
-    );
-  });
-}

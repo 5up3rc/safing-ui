@@ -10,7 +10,6 @@ import Checkbox from 'material-ui/Checkbox';
 import Subheader from 'material-ui/Subheader';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import { countryList } from '../public/country-list';
-import Background from 'icons/icon_secure.png';
 import Paper from 'material-ui/Paper';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';

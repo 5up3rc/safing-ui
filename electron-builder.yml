@@ -1,6 +1,6 @@
-appId: com.example.app
-copyright: Example co
-productName: MyApp
+appId: me.safing.ui
+copyright: Safing ICS Technologies GmbH
+productName: SafingUI
 
 asar: true
 
@@ -13,6 +13,7 @@ files:
   - init.js
   - build/
   - node_modules/
+  - dist-assets/
 
 dmg:
   contents:
@@ -27,11 +28,14 @@ dmg:
 mac:
   target: dmg
   category: public.app-category.tools
+  icon: dist-assets/icons/icon.icns
 
 win:
+  icon: dist-assets/icons/icon.ico
   target: nsis
 
 linux:
+  icon: dist-assets/icons
   target:
     - deb
     - AppImage

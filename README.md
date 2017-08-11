@@ -1,69 +1,39 @@
-# electron-react-redux-boilerplate
+# Safing UI
 
-A minimal boilerplate to get started with [Electron](http://electron.atom.io/), [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/).
+The Safing UI is the user interface to the [Safing Core](https://github.com/Safing/safing-core).
 
-Including:
+## Current Status
 
-* [React Router](https://reacttraining.com/react-router/)
-* [Redux Thunk](https://github.com/gaearon/redux-thunk/)
-* [Redux Actions](https://github.com/acdlite/redux-actions/)
-* [Redux Local Storage](https://github.com/elgerlambert/redux-localstorage/)
-* [Electron Packager](https://github.com/electron-userland/electron-packager)
-* [Electron DevTools Installer](https://github.com/MarshallOfSound/electron-devtools-installer)
-* [Electron Mocha](https://github.com/jprichardson/electron-mocha)
-* [Browsersync](https://browsersync.io/)
+Safing is now in a tech preview phase (v0.0.x), where the first features are completed and we want to open them up to the community to get feedback on the system. It is not yet ready for day to day use and should only be used to play around with the new concept.
 
-## Quick start
+## Download
 
-Clone the repository
-```bash
-git clone --depth=1 git@github.com:jschr/electron-react-redux-boilerplate.git
-```
+For a packaged download of all components, check the [Safing Installer](https://github.com/Safing/safing-installer) repo, else check the [releases](https://github.com/Safing/safing-ui/releases).
 
-Install dependencies
-```bash
-cd electron-react-redux-boilerplate
-npm install
-```
+## Running
 
-Development
-```bash
-npm run develop
-```
+    yarn
+    yarn run develop
 
-## DevTools
+## Requirements
 
-Toggle DevTools:
+- nodejs
+- npm
+- yarn
 
-* OSX: <kbd>Cmd</kbd> <kbd>Alt</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-* Linux: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-* Windows: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
+## Building
 
-## Packaging
+    yarn run pack:win
+    yarn run pack:mac
+    yarn run pack:linux
 
-Modify [electron-builder.yml](./electron-builder.yml) to edit package info.
+If that does not work for you, try to build with a docker image (you need to have docker installed and running for this):
 
-For a full list of options see: https://github.com/electron-userland/electron-builder/wiki/Options.
+    sudo docker run --rm -ti -v $(pwd):/project electronuserland/electron-builder yarn pack:linux
+    # then fix permissions, as the docker image will create files owned by root
+    sudo chown -R $(id -u):$(id -g) .
 
-Create a package for OSX, Windows and Linux
-```
-npm run pack
-```
+## Uses
 
-Or target a specific platform
-```
-npm run pack:mac
-npm run pack:win
-npm run pack:linux
-```
-
-## Tests
-
-```
-npm run test
-```
-
-## Maintainers
-
-- [@jschr](https://github.com/jschr)
-- [@pronebird](https://github.com/pronebird)
+- uses [electron-react-redux boilerplate from jschr](https://github.com/jschr/electron-react-redux-boilerplate)
+- uses `.travis.yml` from [electron-react boilerplate from chentsulin](https://github.com/chentsulin/electron-react-boilerplate)
